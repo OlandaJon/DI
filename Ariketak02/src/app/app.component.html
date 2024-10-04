@@ -1,0 +1,43 @@
+<div>
+    <h1>Artikuluen kudeaketa</h1>
+
+    <table>
+        <thead>
+            <tr>
+            <th>Kodea</th>
+            <th>Deskribapena</th>
+            <th>Prezioa</th>
+            <th>Ezabatu</th>
+            <th>Aukeratu</th>
+        </tr>
+        </thead>
+
+        <tbody>
+            
+            <tr *ngFor="let articulo of articulos">
+                <td>{{articulo.kodea}}</td>
+                <td>{{articulo.describapena}}</td>
+                <td>{{articulo.prezioa}}</td>
+                <td>
+                    <button type="submit" (click)="ezabatu(articulo.kodea)">Ezabatu</button>
+                </td>
+                <td>
+                    <button type="submit" (click)="aukeratu(articulo.kodea)">Aukeratu</button>
+                </td>
+            </tr>
+            
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<div>
+    <p>Kodea: <input type="text" [(ngModel)]="kodea"></p>
+    <p>Deskribapena: <input type="text" name="Deskribapena" [(ngModel)]="desc"></p>
+    <p>Prezioa: <input type="text"  name="prezioa" [(ngModel)]="prezioa"></p>
+
+    <button type="submit" (click)="gehitu()">Gehitu</button>
+    <button type="submit" (click)="aldatu()">Aldatu</button>
+</div>

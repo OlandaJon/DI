@@ -1,0 +1,15 @@
+<div *ngIf="covids!=null; else espera">
+    <table class="table table-striped">
+      <tr>
+        <td>Data</td>
+        <td>Negativo</td>
+        <td>Positiivo</td>
+      </tr>
+      <tr *ngFor="let art of covids">
+        <td>{{art.date}}</td>
+        <td>{{art.negative}}</td>
+        <td>{{art.positive}}</td>
+      </tr>
+    </table>
+  </div>
+  <ng-template #espera><h2>Esperando datos...</h2></ng-template>

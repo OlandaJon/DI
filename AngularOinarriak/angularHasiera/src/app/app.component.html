@@ -1,0 +1,41 @@
+<main class="main">
+  <h1>Información</h1>
+  <div>
+    <p>Langilearen izena: {{nombre}}</p>
+    <p>Adina: {{adina}}</p>
+    @if (adina>=18) {
+      <p>Adinez nagusikoa</p>
+    } @else {
+      <p>Adingabea da</p>
+    }
+    <p>Azken hiru soldatak: {{sueldos[0]}},{{sueldos[1]}},{{sueldos[2]}}</p>
+    <p>Azken hiru hilabeteetako irabaziak: {{ultimosTresSueldos()}}</p>
+    <p>{{esActivo()}}</p>
+    <p>Webgunea: <a href="{{sitio}}">hemen</a></p>
+
+    <table border="1">
+      <tr>
+        <td>Soldatak</td>
+      </tr>
+      @for (sueldo of sueldos; track sueldo) {
+        <tr>
+          <td>{{sueldo}}</td>
+        </tr>
+      }
+    </table>
+  </div>
+
+  <h1>{{izenburua}}</h1>
+
+  <div>
+    <p>Balioa: {{balioa}}</p>
+    <button (click)="aldatu(balioa)">+{{balioa}}</button>
+    <span>{{zenbakia}}</span>
+    <button (click)="aldatu(-balioa)">-{{balioa}}</button>
+  </div>
+
+  <app-heroe></app-heroe>
+  <app-listado></app-listado>
+</main>
+
+

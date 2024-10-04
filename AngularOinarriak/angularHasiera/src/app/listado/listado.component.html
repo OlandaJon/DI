@@ -1,0 +1,17 @@
+<p>Listado heroes</p>
+@if (heroeBorrado) {
+  <div>
+    <h3>Heroe borrado</h3>
+    <span>{{heroeBorrado}}</span>
+  </div>
+} @else {
+  <p>borra heores</p>
+}
+
+<button (click)="borrarHeroe()">Borrar Heroe</button>
+<ul>
+  @for (heroe of heroes; track heroe; let i = $index) {
+    <li>{{i+1}}-{{heroe}}
+    </li>
+  }
+</ul>
