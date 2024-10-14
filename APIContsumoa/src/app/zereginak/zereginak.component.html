@@ -1,0 +1,16 @@
+<div>
+    <table class="table table-striped">
+        <tr>
+          <td>ID</td>
+          <td>Title</td>
+          <td>UserID</td>
+          <td>COMPLETED</td>
+        </tr>
+        <tr *ngFor="let zeregina of zereginak">
+          <td>{{zeregina.id}}</td>
+          <td>{{zeregina.title}}</td>
+          <td>{{zeregina.userId}}</td>
+          <td>{{zeregina.completed}}</td>
+        </tr>
+      </table>
+</div>
